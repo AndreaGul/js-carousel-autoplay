@@ -1,6 +1,19 @@
 'use strict';
+//dopo 3 secondi le immagini cambiano automaticamente
+let avanti = setInterval(fnAvanti, 3000);
 
-const avanti = setInterval(fnAvanti, 3000);
+const start = document.getElementById('start');
+const stop = document.getElementById('stop');
+
+//Al click faccio scorrere le immagini
+start.addEventListener('click', function () {
+  avanti = setInterval(fnAvanti, 3000);
+});
+
+//Al click su stop fermo lo scorrimento delle immagini
+stop.addEventListener('click', function () {
+  clearInterval(avanti);
+});
 
 function fnAvanti() {
   // Dobbiamo tener conto della quantita di elementi contenuti in domItem per fermare lo scorrimento delle immagini una volta arrivati all'ultima
@@ -179,7 +192,6 @@ const domSideBox = document.querySelectorAll('.side-box> .item > div');
 
 //BONUS 3
 const domClickSideBox = document.querySelectorAll('.side-box> .item ');
-console.log(domClickSideBox[1]);
 
 for (let i = 0; i < 5; i++) {
   domClickSideBox[i].addEventListener('click', function () {
