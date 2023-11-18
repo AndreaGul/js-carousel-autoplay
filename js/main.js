@@ -1,5 +1,7 @@
 'use strict';
 
+const avanti = setInterval(fnAvanti, 3000);
+
 function fnAvanti() {
   // Dobbiamo tener conto della quantita di elementi contenuti in domItem per fermare lo scorrimento delle immagini una volta arrivati all'ultima
 
